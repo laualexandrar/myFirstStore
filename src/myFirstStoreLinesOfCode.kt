@@ -1,7 +1,7 @@
 
 fun main() {
-    var myListOneOfProducts = mutableListOf("chicken", "rice", "juice", "mango")
-    var myListOfPrices = mutableListOf(3.30, 4.00, 5.20, 2.40)
+    val myListOneOfProducts = mutableListOf("chicken", "rice", "juice", "mango")
+    val myListOfPrices = mutableListOf(3.30, 4.00, 5.20, 2.40)
 
     loop@ do {
 
@@ -19,7 +19,7 @@ fun main() {
         print(options)
         print("\n")
         print("Select one of our options: ")
-        var myInput = readLine()!!.toInt()
+        val myInput = readLine()!!.toInt()
 
         print("\n")
         when (myInput) {
@@ -27,14 +27,14 @@ fun main() {
                 //1. Add a product and price
                 print("You selected one, Please add a new product: ")
                 print("\n")
-                var newProduct = readLine()
+                val newProduct = readLine()
                 if (newProduct != null) {
                     myListOneOfProducts.add(newProduct)
                 }
                 print("\n")
                 print("Please add a new price for that product")
                 print("\n")
-                var newPrice = readLine()?.toDouble()
+                val newPrice = readLine()?.toDouble()
                 if (newPrice != null) {
                     myListOfPrices.add(newPrice)
                 }
@@ -74,10 +74,10 @@ fun main() {
                 print("\n")
                 print("Write the name of the product that you like to remove: ")
 
-                var removeProduct = readLine()?.toLowerCase()
+                val removeProduct = readLine()?.toLowerCase()
 
                 if(myListOneOfProducts.contains(removeProduct)) {
-                    var z = myListOneOfProducts.indexOf(removeProduct)
+                    val z = myListOneOfProducts.indexOf(removeProduct)
                     print("This is $z")
                     myListOfPrices.removeAt(z)
 
@@ -101,7 +101,7 @@ fun main() {
                 print("This is the updated list of prices")
                 print("\n")
 
-                var r = 1
+                val r = 1
                 for(price in myListOfPrices){
                     println("$r. $price")
                 }
@@ -124,9 +124,9 @@ fun main() {
                     p++
                 }
 
-                var productName = readLine()?.toLowerCase()
+                val productName = readLine()?.toLowerCase()
                 if(myListOneOfProducts.contains(productName)){
-                    var indexProduct = myListOneOfProducts.indexOf(productName)
+                    val indexProduct = myListOneOfProducts.indexOf(productName)
                     print("The price of $productName is ${myListOfPrices[indexProduct]}")
                     print("\n")
                 }else {
@@ -149,9 +149,9 @@ fun main() {
                 }
 
 
-                var myPriceForAProduct = readLine()?.toLowerCase()?.toDouble()
+                val myPriceForAProduct = readLine()?.toLowerCase()?.toDouble()
                 if(myListOfPrices.contains(myPriceForAProduct)){
-                    var indexPrice = myListOfPrices.indexOf(myPriceForAProduct)
+                    val indexPrice = myListOfPrices.indexOf(myPriceForAProduct)
                     print("You wrote the price $myPriceForAProduct. This is equal to ${myListOneOfProducts[indexPrice]}")
                     print("\n")
                 }else {
